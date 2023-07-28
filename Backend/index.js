@@ -14,4 +14,9 @@ app.listen(PORT, () => {
   console.log(`Server is Running ${PORT}`);
 });
 
+app.use(express.json());
+
 mongoose.connect("mongodb+srv://employee:employee@cluster0.bdzguf0.mongodb.net/")
+
+
+app.use("/auth",require("./routers/userRouter")); 
